@@ -12,11 +12,13 @@ export class IncComponent implements OnInit {
 
   num = 0;
 
+  incStep = 1;
+
   ngOnInit() {
   }
 
   handleAddButtonOnClick() {
-    this.num++;
+    this.num = this.num + this.incStep;
   }
 
 }

@@ -1,6 +1,7 @@
 <div>
   <p>
-    inc{{num}} works!
+    inc - {{num}} works!
   </p>
+  <input type="number" [(ngModel)]="incStep" id="js-inc-step" />
   <button (click)="handleAddButtonOnClick()">Add</button>
 </div>
