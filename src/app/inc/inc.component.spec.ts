@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
 
-import { IncComponent } from './inc.component';
+import {IncComponent} from './inc.component';
 
 describe('IncComponent', () => {
   let component: IncComponent;
@@ -8,9 +9,10 @@ describe('IncComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IncComponent ]
+      declarations: [IncComponent],
+      imports: [FormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -27,5 +29,12 @@ describe('IncComponent', () => {
     expect(component.num).toEqual(0);
     component.handleAddButtonOnClick();
     expect(component.num).toEqual(1);
+  });
+
+  it('should be inc 10', () => {
+    expect(component.num).toEqual(0);
+    component.incStep = 10;
+    component.handleAddButtonOnClick();
+    expect(component.num).toEqual(10);
   });
 });
