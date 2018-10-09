@@ -4,4 +4,10 @@
   </p>
   <input type="number" [(ngModel)]="incStep" id="js-inc-step" />
   <button (click)="handleAddButtonOnClick()">Add</button>
+  <ul>
+    <li *ngFor="let opLog of incOpLogs">
+      {{opLog.time}} - {{opLog.value}}
+      <button (click)="handleRevertButtonOnClick(opLog)">Revert it</button>
+    </li>
+  </ul>
 </div>
